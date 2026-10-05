@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ann Flores Mathew | Portfolio</title>
+<meta name="description" content="Portfolio of Ann Flores Mathew, IMCA student at Rajagiri College of Social Sciences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F4FA; --surface:#FFFFFF; --ink:#1B1740; --muted:#5E5A80;
+  --line:#DCD9EC; --accent:#E8467C; --accent-ink:#FFFFFF; --mint:#2FA67F;
+  --display:'Bricolage Grotesque',Georgia,sans-serif;
+  --body:'Instrument Sans',system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#14112B;--surface:#1D1940;--ink:#F1EFFC;--muted:#A9A5CC;--line:#322D5E;--accent:#FF6B9A;--accent-ink:#14112B;--mint:#5FD6AC}
+}
+:root[data-theme="dark"]{--bg:#14112B;--surface:#1D1940;--ink:#F1EFFC;--muted:#A9A5CC;--line:#322D5E;--accent:#FF6B9A;--accent-ink:#14112B;--mint:#5FD6AC}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin-bottom:40px}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--display);font-weight:800;text-decoration:none;font-size:1.15rem}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem}
+@media(max-width:640px){nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.hero small{display:inline-block;color:var(--muted);font-weight:500;margin-bottom:18px;border:1px solid var(--line);padding:6px 14px;border-radius:99px;background:var(--surface)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,12vw,8.5rem);line-height:.92;letter-spacing:-.04em}
+.hero h1 span{display:block}
+.hero h1 .last{color:var(--accent);animation:rise .9s .15s both cubic-bezier(.2,.8,.2,1)}
+.hero h1 .first{animation:rise .9s both cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero p{max-width:52ch;margin:28px 0 32px;font-size:1.15rem;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:99px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about p+p{margin-top:16px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.facts dt{font-weight:600;font-size:.9rem;color:var(--muted)}
+.facts dd{margin-bottom:16px;font-weight:500}
+.facts dd:last-child{margin-bottom:0}
+
+/* skills */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px}
+@media(max-width:760px){.skills{grid-template-columns:1fr}}
+.skill{display:flex;justify-content:space-between;font-weight:500;margin-bottom:8px}
+.skill em{font-style:normal;color:var(--muted);font-size:.9rem}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.in .bar i{width:var(--w)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips span{background:var(--surface);border:1px solid var(--line);padding:7px 16px;border-radius:99px;font-size:.92rem}
+
+/* projects */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font:inherit;font-weight:500;background:none;color:var(--ink);border:1px solid var(--line);padding:8px 18px;border-radius:99px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.card[hidden]{display:none}
+.card .tag{align-self:flex-start;font-size:.82rem;font-weight:600;color:var(--mint)}
+.card h3{font-family:var(--display);font-size:1.4rem;line-height:1.2}
+.card p{color:var(--muted);font-size:.98rem}
+.card ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.card li{font-size:.8rem;border:1px solid var(--line);padding:3px 10px;border-radius:99px}
+
+/* contact */
+form{display:grid;gap:14px;max-width:520px}
+label{font-weight:500;font-size:.95rem}
+input,textarea{width:100%;font:inherit;padding:12px 14px;margin-top:6px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.links{display:flex;gap:22px;margin-top:28px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.92rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.bar i{width:var(--w)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top">Ann Flores Mathew</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="theme" aria-label="Switch light or dark theme">◐</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <small>IMCA student · Rajagiri College of Social Sciences</small>
+    <h1><span class="first">Ann Flores</span><span class="last">Mathew</span></h1>
+    <p>I build practical software and campaigns that people actually use, mixing computer applications with a social-sciences way of thinking about people.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">See my projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="about"><div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm Ann, a student of the Integrated Master of Computer Applications (IMCA) programme at Rajagiri College of Social Sciences, Kalamassery, Kerala.</p>
+        <p>I enjoy turning ideas into working things: a web app, a marketing plan, a short video. Studying at a social-sciences college keeps me focused on the person using what I build.</p>
+        <p>I'm looking for internships and collaborations in web development, digital marketing and product design.</p>
+      </div>
+      <dl class="facts">
+        <dt>Studying</dt><dd>IMCA</dd>
+        <dt>College</dt><dd>Rajagiri College of Social Sciences</dd>
+        <dt>Based in</dt><dd>Kerala, India</dd>
+        <dt>Open to</dt><dd>Internships, projects, collaborations</dd>
+      </dl>
+    </div>
+  </div></section>
+
+  <section id="skills"><div class="wrap">
+    <h2>Skills</h2>
+    <p class="lead">What I use most, and how comfortable I am with each.</p>
+    <div class="skills" id="skillList">
+      <div><div class="skill">Python <em>Intermediate</em></div><div class="bar"><i style="--w:75%"></i></div></div>
+      <div><div class="skill">Java <em>Intermediate</em></div><div class="bar"><i style="--w:70%"></i></div></div>
+      <div><div class="skill">HTML, CSS and JavaScript <em>Intermediate</em></div><div class="bar"><i style="--w:72%"></i></div></div>
+      <div><div class="skill">SQL and databases <em>Intermediate</em></div><div class="bar"><i style="--w:68%"></i></div></div>
+      <div><div class="skill">Digital marketing <em>Growing</em></div><div class="bar"><i style="--w:60%"></i></div></div>
+      <div><div class="skill">Design in Canva and Figma <em>Growing</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+    </div>
+    <div class="chips">
+      <span>Git and GitHub</span><span>Communication</span><span>Teamwork</span><span>Presentation</span><span>Problem solving</span><span>Time management</span>
+    </div>
+  </div></section>
+
+  <section id="projects"><div class="wrap">
+    <h2>Projects</h2>
+    <p class="lead">A few things I've worked on. Filter by type.</p>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button aria-pressed="false" data-f="web">Web</button>
+      <button aria-pressed="false" data-f="software">Software</button>
+      <button aria-pressed="false" data-f="marketing">Marketing</button>
+    </div>
+    <div class="grid">
+      <article class="card" data-c="marketing">
+        <span class="tag">Marketing</span>
+        <h3>Re^ve eco: Steps that count</h3>
+        <p>A brand marketing project: a minimalist strategy deck, a web app and Instagram plan, and a sleek video ad built around the tagline "Steps that count".</p>
+        <ul><li>Strategy</li><li>Instagram</li><li>Video ad</li></ul>
+      </article>
+      <article class="card" data-c="web">
+        <span class="tag">Web</span>
+        <h3>Campus Events Portal</h3>
+        <p>A responsive site where students browse upcoming college events, filter by department and register with a simple form.</p>
+        <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      </article>
+      <article class="card" data-c="software">
+        <span class="tag">Software</span>
+        <h3>Student Record Manager</h3>
+        <p>A database-backed app to add, search and update student records, with validation and clear error messages.</p>
+        <ul><li>Java</li><li>MySQL</li></ul>
+      </article>
+      <article class="card" data-c="software">
+        <span class="tag">Software</span>
+        <h3>Expense Tracker</h3>
+        <p>A Python tool that logs daily spending by category and shows a monthly summary so users can see where money goes.</p>
+        <ul><li>Python</li><li>CSV</li></ul>
+      </article>
+      <article class="card" data-c="web">
+        <span class="tag">Web</span>
+        <h3>Personal Portfolio</h3>
+        <p>This site: a single-file portfolio with light and dark themes, built without frameworks.</p>
+        <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      </article>
+    </div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <h2>Contact</h2>
+    <p class="lead">Have an opportunity or an idea? Send me a note.</p>
+    <form id="cf">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Message<textarea name="msg" rows="4" required></textarea></label>
+      <button class="btn main" type="submit">Send message</button>
+    </form>
+    <div class="links">
+      <a href="mailto:your.email@example.com">your.email@example.com</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Ann Flores Mathew. IMCA, Rajagiri College of Social Sciences.</div></footer>
+
+<script>
+// Footer year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Theme toggle
+var root = document.documentElement, tbtn = document.getElementById('theme');
+try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch(e) {}
+tbtn.addEventListener('click', function () {
+  var dark = root.getAttribute('data-theme') === 'dark' ||
+    (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+  var next = dark ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch(e) {}
+});
+
+// Skill bars fill when scrolled into view
+var sl = document.getElementById('skillList');
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(function (e, o) {
+    if (e[0].isIntersecting) { sl.classList.add('in'); o.disconnect(); }
+  }, { threshold: .3 }).observe(sl);
+} else { sl.classList.add('in'); }
+
+// Project filter
+var fb = document.querySelectorAll('.filters button'), cards = document.querySelectorAll('.card');
+fb.forEach(function (b) {
+  b.addEventListener('click', function () {
+    fb.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    b.setAttribute('aria-pressed', 'true');
+    cards.forEach(function (c) { c.hidden = b.dataset.f !== 'all' && c.dataset.c !== b.dataset.f; });
+  });
+});
+
+// Contact form opens the visitor's email app
+document.getElementById('cf').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target;
+  var body = encodeURIComponent(f.msg.value + '\n\nFrom: ' + f.name.value + ' (' + f.email.value + ')');
+  location.href = 'mailto:your.email@example.com?subject=' + encodeURIComponent('Portfolio message from ' + f.name.value) + '&body=' + body;
+});
+</script>
+</body>
+</html>
